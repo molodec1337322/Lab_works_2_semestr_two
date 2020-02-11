@@ -127,3 +127,17 @@ int main()
 	cin >> celcius;
 	cout << "Фаренгейтов: " << (float)celcius * 9 / 5 + 32;
 }
+
+
+
+//lab 8
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	cout << setfill('.') << "Москва"<< setw(8) <<"5461782";
+}
