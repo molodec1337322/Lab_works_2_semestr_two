@@ -218,3 +218,29 @@ int main()
 	cout << "Десятичных фунтов: " << decimalPounds;
 }
 
+//lab 11
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Rus");
+	cout << setiosflags(ios::left) << setfill(' ') << setw(10) << "Фамилия"
+		<< setfill(' ') << setw(10) << "Имя"
+		<< setfill(' ') << setw(15) << "Адрес"
+		<< setfill(' ') << setw(12) << "Город" << "\n\n"
+		<< setfill(' ') << setw(10) << "Петров"
+		<< setfill(' ') << setw(10) << "Василий"
+		<< setfill(' ') << setw(15) << "Кленовая 16"
+		<< setfill(' ') << setw(12) << "Питер" << "\n"
+		<< setfill(' ') << setw(10) << "Иванов"
+		<< setfill(' ') << setw(10) << "Сергей"
+		<< setfill(' ') << setw(15) << "Осиновая 3"
+		<< setfill(' ') << setw(12) << "Находка" << "\n"
+		<< setfill(' ') << setw(10) << "Сидоров"
+		<< setfill(' ') << setw(10) << "Иван"
+		<< setfill(' ') << setw(15) << "Березовая 21"
+		<< setfill(' ') << setw(12) << "Калиниград" << "\n";
+}
