@@ -24,3 +24,35 @@ int main()
         cout << setw(6) << userNum * i;  
     }
 }
+
+
+
+//lab 2
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    short userChoise;
+    cout << "Введите 1 для перевода из шкалы фаренгейта в шкалу цельсия\nВведите 2 для перевода из шкалы цельсия в шкалу фаренгейта\n";
+    cin >> userChoise;
+
+    if(userChoise == 1)
+    {
+        float fahrenheit;
+        cout << "Введите градусы по фаренгейту: ";
+        cin >> fahrenheit;
+        cout << "По цельсию это будет: " << (float)5 / 9 * (fahrenheit - 32);
+    }
+    else if(userChoise == 2)
+    {
+        float celcius;
+        cout << "Введите градусы по цельсию: ";
+        cin >> celcius;
+        cout << "По фаренгейту это будет: " << (float)9 / 5 * celcius + 32;
+    }
+}
