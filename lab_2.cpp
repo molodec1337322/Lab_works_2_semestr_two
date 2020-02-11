@@ -56,3 +56,26 @@ int main()
         cout << "По фаренгейту это будет: " << (float)9 / 5 * celcius + 32;
     }
 }
+
+
+
+
+//lab 3
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    char numChar;
+    unsigned long num = 0;
+    cout << "Введите число: ";
+    while ((numChar = _getche()) != '\r')
+    {
+        num = num * 10 + numChar - 48;
+    }
+    cout << "\nВы ввели: " << num << endl;
+}
