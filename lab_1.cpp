@@ -141,3 +141,51 @@ int main()
 	setlocale(LC_ALL, "Russian");
 	cout << setfill('.') << "Москва"<< setw(8) <<"5461782";
 }
+
+
+
+//lab 9
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+
+	string firstNum, secondNum;
+
+	cout << "Введите первую дробь: ";
+	cin >> firstNum;
+
+	cout << "\nВведите вторую дробь: ";
+	cin >> secondNum;
+
+	size_t slashPos;
+	for (size_t i = 0; i < firstNum.size(); i++)
+	{
+		if (firstNum[i] == '/')
+		{
+			slashPos = i;
+			break;
+		}
+	}
+
+	int firstNumHalves[2] = {atoi(firstNum.substr(0, slashPos).c_str()),  atoi(firstNum.substr(slashPos + 1, firstNum.size()).c_str())};
+
+	for (size_t i = 0; i < secondNum.size(); i++)
+	{
+		if (secondNum[i] == '/')
+		{
+			slashPos = i;
+			break;
+		}
+	}
+
+	int secondNumHalves[2] = { atoi(secondNum.substr(0, slashPos).c_str()), atoi(secondNum.substr(slashPos + 1, secondNum.size()).c_str())};
+
+	int upperHalf = firstNumHalves[0] * secondNumHalves[1] + secondNumHalves[0] * firstNumHalves[1];
+	int bottomHalf = firstNumHalves[1] * secondNumHalves[1];
+
+	cout << "\nРезультат равен: " << upperHalf << "/" << bottomHalf;
+}
