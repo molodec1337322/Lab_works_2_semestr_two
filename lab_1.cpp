@@ -189,3 +189,32 @@ int main()
 
 	cout << "\nРезультат равен: " << upperHalf << "/" << bottomHalf;
 }
+
+
+
+
+//lab 10
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+
+	const int pennyToShillings = 12;
+	const int shillingsToPounds = 20;
+
+	float penny, shillings, pounds;
+	cout << "Введите количество пенсов: ";
+	cin >> penny;
+	cout << "Введите количество шиллингов: ";
+	cin >> shillings;
+	cout << "Введите количество фунтов: ";
+	cin >> pounds;
+
+	float decimalPounds = pounds + (penny / pennyToShillings + shillings) / shillingsToPounds;
+
+	cout << "Десятичных фунтов: " << decimalPounds;
+}
+
