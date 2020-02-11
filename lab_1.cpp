@@ -244,3 +244,33 @@ int main()
 		<< setfill(' ') << setw(15) << "Березовая 21"
 		<< setfill(' ') << setw(12) << "Калиниград" << "\n";
 }
+
+
+
+
+
+//lab 12
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    float decimalPound, Penny_1, Pennny_2, temp_1, temp_2, shilling, penny;
+    cout << "Ведите число десятичных фунтов ";
+    cin >> decimalPound;
+
+    Penny_1 = decimalPound * 240;
+    decimalPound = static_cast<int>(decimalPound);
+    Pennny_2 = decimalPound * 240;
+    temp_1 = Penny_1 - Pennny_2;
+    temp_1 = static_cast<int>(temp_1);
+    shilling = temp_1 / 12;
+    shilling = static_cast<int>(shilling);
+    temp_2 = shilling * 12;
+    penny = temp_1 - temp_2;
+
+    cout << "Фунтов в старой системе: " << decimalPound << "." << shilling << "." << penny << endl;
+}
