@@ -348,3 +348,105 @@ int main()
 
     cout << "Необходимая сумма будет через: " << (int)years;
 }
+
+
+
+
+
+
+//lab 11
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    int pounds_1, pounds_2, shillings_1, shillings_2, penny_1, penny_2;
+    int poundsResult, shillingsResult, pennyResult;
+    const int pennyInShilling = 12;
+    const int shillingsInPound = 20;
+    char userResponseToContinue;
+    char userResponceOperation;
+
+    do {
+        cout << "Введите действие: ";
+        cin >> userResponceOperation;
+
+        switch (userResponceOperation)
+        {
+        case '+':
+            cout << "Введите первую сумму: ";
+            cin >> pounds_1 >> shillings_1 >> penny_1;
+            cout << "Введите вторую сумму: ";
+            cin >> pounds_2 >> shillings_2 >> penny_2;
+
+            poundsResult = pounds_1 + pounds_2;
+            shillingsResult = shillings_1 + shillings_2;
+            pennyResult = penny_1 + penny_2;
+
+            shillingsResult = shillingsResult + pennyResult / pennyInShilling;
+            pennyResult %= pennyInShilling;
+            poundsResult = poundsResult + shillingsResult / shillingsInPound;
+            shillingsResult %= shillingsInPound;
+
+            cout << "Всего: " << poundsResult << " " << shillingsResult << " " << pennyResult;
+
+            break;
+
+        case '-':
+            cout << "Введите первую сумму: ";
+            cin >> pounds_1 >> shillings_1 >> penny_1;
+            cout << "Введите вторую сумму: ";
+            cin >> pounds_2 >> shillings_2 >> penny_2;
+
+            poundsResult = pounds_1 - pounds_2;
+            shillingsResult = shillings_1 - shillings_2;
+            pennyResult = penny_1 - penny_2;
+
+            if (pennyResult < 0)
+            {
+                shillingsResult--;
+                pennyResult = pennyInShilling - pennyResult;
+            }
+            if (shillingsResult < 0)
+            {
+                poundsResult--;
+                shillingsResult = shillingsInPound - shillingsResult;
+            }
+
+            cout << "Всего: " << poundsResult << " " << shillingsResult << " " << pennyResult;
+
+            break;
+
+        case '*':
+            int multiplier;
+            cout << "Введите первую сумму: ";
+            cin >> pounds_1 >> shillings_1 >> penny_1;
+            cout << "Введите во сколько раз надо увеличить указанную сумму: ";
+            cin >> multiplier;
+
+            poundsResult = pounds_1 * multiplier;
+            shillingsResult = shillings_1 * multiplier;
+            pennyResult = penny_1 * multiplier;
+
+            shillingsResult = shillingsResult + pennyResult / pennyInShilling;
+            pennyResult %= pennyInShilling;
+            poundsResult = poundsResult + shillingsResult / shillingsInPound;
+            shillingsResult %= shillingsInPound;
+
+            cout << "Всего: " << poundsResult << " " << shillingsResult << " " << pennyResult;
+
+            break;
+
+        default:
+            cout << "Такого действия нет\n";
+            break;
+        }
+
+        cout << "\nПродолжить? y/n: ";
+        cin >> userResponseToContinue;
+
+    } while (userResponseToContinue == 'y');
+}
