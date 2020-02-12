@@ -280,3 +280,40 @@ int main()
 
     } while (userResponse == 'y');
 }
+
+
+
+
+
+//lab 9
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    int guestsCount, freeChairs;
+    int temp;
+
+    cout << "Введите количество гостей: ";
+    cin >> guestsCount;
+    cout << "Введите количество мест: ";
+    cin >> freeChairs;
+
+    if (guestsCount < freeChairs)
+    {
+        cout << "Количество гостей не может быть меньше стульев";
+    }
+    else
+    {
+        temp = 1;
+        for (int i = guestsCount; i > guestsCount - freeChairs; i--)
+        {
+            temp *= i;
+        }
+
+        cout << "Количестов способов рассадки: " << temp;
+    }
+}
