@@ -195,3 +195,34 @@ int main()
 		}
 	}
 }
+
+
+
+//lab 7
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    float startMoney, money, percents;
+    int years;
+
+    cout << "Введите начальный вклад: ";
+    cin >> startMoney;
+    cout << "Введите число лет: ";
+    cin >> years;
+    cout << "Введите процентную ставку: ";
+    cin >> percents;
+
+    money = startMoney;
+    for (int i = 0; i < years; i++)
+    {
+        money = money + (money * percents / 100);
+    }
+
+    cout << "Через " << years << "лет вы получите: " << money;
+
+}
