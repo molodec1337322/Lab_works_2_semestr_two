@@ -135,3 +135,29 @@ int main()
 		}
 	} while (isContinue);
 }
+
+
+
+
+//lab 5
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+
+	int height = 20;
+	char pyramidChar = 'X';
+
+	for (int i = 0; i < height; i++)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			cout << pyramidChar;
+		}
+		cout << "\n";
+	}
+}
+
