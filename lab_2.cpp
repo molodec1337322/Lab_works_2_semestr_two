@@ -27,6 +27,8 @@ int main()
 
 
 
+
+
 //lab 2
 #include <iostream>
 #include <iomanip>
@@ -60,6 +62,8 @@ int main()
 
 
 
+
+
 //lab 3
 #include <iostream>
 #include "conio.h"
@@ -79,6 +83,8 @@ int main()
     }
     cout << "\nВы ввели: " << num << endl;
 }
+
+
 
 
 
@@ -139,6 +145,8 @@ int main()
 
 
 
+
+
 //lab 5
 #include <iostream>
 
@@ -160,6 +168,8 @@ int main()
 		cout << "\n";
 	}
 }
+
+
 
 
 
@@ -198,6 +208,8 @@ int main()
 
 
 
+
+
 //lab 7
 #include <iostream>
 
@@ -225,4 +237,46 @@ int main()
 
     cout << "Через " << years << "лет вы получите: " << money;
 
+}
+
+
+
+
+
+//lab 8
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    int pounds_1, pounds_2, shillings_1, shillings_2, penny_1, penny_2;
+    int poundsResult, shillingsResult, pennyResult;
+    const int pennyInShilling = 12;
+    const int shillingsInPound = 20;
+    char userResponse;
+
+    do {
+        cout << "Введите первую сумму: ";
+        cin >> pounds_1 >> shillings_1 >> penny_1;
+        cout << "Введите вторую сумму: ";
+        cin >> pounds_2 >> shillings_2 >> penny_2;
+
+        poundsResult = pounds_1 + pounds_2;
+        shillingsResult = shillings_1 + shillings_2;
+        pennyResult = penny_1 + penny_2;
+
+        shillingsResult = shillingsResult + pennyResult / pennyInShilling;
+        pennyResult %= pennyInShilling;
+        poundsResult = poundsResult + shillingsResult / shillingsInPound;
+        shillingsResult %= shillingsInPound;
+
+        cout << "Всего: " << poundsResult << " " << shillingsResult << " " << pennyResult;
+
+        cout << "\nПродолжить? y/n: ";
+        cin >> userResponse;
+
+    } while (userResponse == 'y');
 }
