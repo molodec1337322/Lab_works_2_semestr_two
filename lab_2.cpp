@@ -450,3 +450,95 @@ int main()
 
     } while (userResponseToContinue == 'y');
 }
+
+
+
+
+
+
+//lab 12
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+
+	int firstNumHalves[2];
+	int secondNumHalves[2];
+	int upperHalf, bottomHalf;
+	char userResponceToContinue;
+	char userResponceOperation;
+
+	string firstNum, secondNum;
+
+	do {
+		cout << "Введите первую дробь: ";
+		cin >> firstNum;
+		cout << "Введите вторую дробь: ";
+		cin >> secondNum;
+		cout << "Введите действие: ";
+		cin >> userResponceOperation;
+
+		size_t slashPos;
+		for (size_t i = 0; i < firstNum.size(); i++)
+		{
+			if (firstNum[i] == '/')
+			{
+				slashPos = i;
+				break;
+			}
+		}
+
+		firstNumHalves[0] = atoi(firstNum.substr(0, slashPos).c_str()); 
+		firstNumHalves[1] = atoi(firstNum.substr(slashPos + 1, firstNum.size()).c_str());
+
+		for (size_t i = 0; i < secondNum.size(); i++)
+		{
+			if (secondNum[i] == '/')
+			{
+				slashPos = i;
+				break;
+			}
+		}
+
+		secondNumHalves[0] = atoi(secondNum.substr(0, slashPos).c_str());
+		secondNumHalves[1] = atoi(secondNum.substr(slashPos + 1, secondNum.size()).c_str());
+
+		switch (userResponceOperation)
+		{
+		case '+':
+			upperHalf = firstNumHalves[0] * secondNumHalves[1] + secondNumHalves[0] * firstNumHalves[1];
+			bottomHalf = firstNumHalves[1] * secondNumHalves[1];
+			cout << "\nРезультат равен: " << upperHalf << "/" << bottomHalf;
+			break;
+
+		case '-':
+			upperHalf = firstNumHalves[0] * secondNumHalves[1] - secondNumHalves[0] * firstNumHalves[1];
+			bottomHalf = firstNumHalves[1] * secondNumHalves[1];
+			cout << "\nРезультат равен: " << upperHalf << "/" << bottomHalf;
+			break;
+
+		case '*':
+			upperHalf = firstNumHalves[0] * secondNumHalves[0];
+			bottomHalf = firstNumHalves[1] * secondNumHalves[1];
+			cout << "\nРезультат равен: " << upperHalf << "/" << bottomHalf;
+			break;
+
+		case '/':
+			upperHalf = firstNumHalves[0] * secondNumHalves[1];
+			bottomHalf = firstNumHalves[1] * secondNumHalves[0];
+			cout << "\nРезультат равен: " << upperHalf << "/" << bottomHalf;
+			break;
+
+		default:
+			cout << "Такого действия не существует\n";
+			break;
+		}
+
+		cout << "\nХотите продолжить? (y/n): ";
+		cin >> userResponceToContinue;
+
+	} while (userResponceToContinue == 'y');
+}
