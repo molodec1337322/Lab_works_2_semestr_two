@@ -317,3 +317,34 @@ int main()
         cout << "Количестов способов рассадки: " << temp;
     }
 }
+
+
+
+
+//lab 10
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    float years = 0;
+    float money, needMoney, percents;
+
+    cout << "Введите стартовую сумму: ";
+    cin >> money;
+    cout << "Введите необходимую сумму: ";
+    cin >> needMoney;
+    cout << "Введите процентную ставку: ";
+    cin >> percents;
+
+    while (money <= needMoney)
+    {
+        money = money + (money * percents / 100);
+        years++;
+    }
+
+    cout << "Необходимая сумма будет через: " << (int)years;
+}
