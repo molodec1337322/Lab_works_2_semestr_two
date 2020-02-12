@@ -161,3 +161,37 @@ int main()
 	}
 }
 
+
+
+//lab 6
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    int userNum, result;
+
+	while (true)
+	{
+		cout << "\nВведите число: ";
+		cin >> userNum;
+
+		if (userNum == 0)
+		{
+			break;
+		}
+		else
+		{
+			result = 1;
+			for (int i = userNum; i > 0; i--)
+			{
+				result *= i;
+			}
+
+			cout << "Факториал равен: " << result;
+		}
+	}
+}
