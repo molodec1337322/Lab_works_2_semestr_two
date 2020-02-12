@@ -79,3 +79,59 @@ int main()
     }
     cout << "\nВы ввели: " << num << endl;
 }
+
+
+
+
+//lab 4
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+
+	float firstNum, secondNum;
+	char operand;
+	bool isContinue = false;
+	char userResponse;
+
+	do{
+		cout << "Введите первый операнд, операцию и второй операнд: ";
+		cin >> firstNum >> operand >> secondNum;
+		switch (operand)
+		{
+		case '+':
+			cout << "Результат равен: " << firstNum + secondNum;
+			break;
+		case '-':
+			cout << "Результат равен: " << firstNum - secondNum;
+			break;
+		case '*':
+			cout << "Результат равен: " << firstNum * secondNum;
+			break;
+		case '/':
+			cout << "Результат равен: " << firstNum / secondNum;
+			break;
+		default:
+			cout << "\nТакого операда нет";
+			break;
+		}
+
+		cout << "\nПродолжить y/n: ";
+		cin >> userResponse;
+		switch (userResponse)
+		{
+		case 'y':
+			isContinue = true;
+			break;
+		case 'n':
+			isContinue = false;
+			break;
+		default:
+			cout << "Такого оператора нет";
+			break;
+		}
+	} while (isContinue);
+}
