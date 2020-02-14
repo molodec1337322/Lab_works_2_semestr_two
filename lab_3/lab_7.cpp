@@ -68,12 +68,29 @@ int main()
 
 	for (int i = 0; i < 3; i++)
 	{
-		cout << "Зарплата сотрудника под номером " << employees[i].id << " " << employees[i].salary << "\n";
-		cout << "\nОн утроился " << employees[i].date.month << "/" << employees[i].date.year << "/" << employees[i].date.year;
+		cout << "\nЗарплата сотрудника под номером " << employees[i].id << " " << employees[i].salary;
+		cout << "\nОн устроился " << employees[i].date.month << "/" << employees[i].date.year << "/" << employees[i].date.year;
 		cout << "\nОн является ";
 		switch (employees[i].etype)
 		{
-
+		case laborer:
+			cout << "laborer";
+			break;
+		case secretary:
+			cout << "secretary";
+			break;
+		case manager:
+			cout << "manager";
+			break;
+		case accountant:
+			cout << "accountant";
+			break;
+		case executive:
+			cout << "execitive";
+			break;
+		case researcher:
+			cout << "reseracher";
+			break;
 		}
 	}	
 }
