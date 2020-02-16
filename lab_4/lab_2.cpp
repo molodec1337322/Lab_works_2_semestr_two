@@ -14,6 +14,7 @@ double power(double n, int p = 2)
 
 int main()
 {
+	setlocale(LC_ALL, "Russian");
 	double number, answer;
 	int pow;
 	char userResponse;
