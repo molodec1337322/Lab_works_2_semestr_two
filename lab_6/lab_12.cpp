@@ -14,6 +14,7 @@ class Money
 private:
 	long double money;
 	string moneyStr;
+	string numbersStr;
 	string digits = "0123456789";
 
 	void FormateMoneyStr()
@@ -55,7 +56,7 @@ public:
 				numbers += c;
 			}
 		}
-		moneyStr = numbers;
+		numbersStr = moneyStr = numbers;
 		FormateMoneyStr();
 
 		char* numbersCh = new char[numbers.length() + 1];
@@ -77,25 +78,13 @@ public:
 	Money operator + (Money m)
 	{
 		double newMoney = money + m.money;
-		int max_1 = to_string(round(money)).length();
-		int max_2 = to_string(round(m.money)).length();
-		int max = max_1 > max_2 ? max_1 : max_2;
+		size_t max;
+		if (numbersStr.length() > m.numbersStr.length()) max = numbersStr.length();
+		else max = m.numbersStr.length();
 
-		string mStr = to_string(newMoney);
-		for (size_t i = mStr.length(); i > 0 && i <= max; i--)
-		{
-			if (mStr[i] == '0')
-			{
-				mStr.erase(i);
-			}
-		}
+		string newMoneyStr = to_string(newMoney);
 
-		while (mStr.length() - max <= 2)
-		{
-			mStr.append("0");
-		}
-
-		return Money(mStr);
+		return Money(newMoneyStr.substr(0, max + 1));
 	}
 };
 
@@ -116,5 +105,5 @@ int main()
 
 	dollars_3 = dollars_1 + dollars_2;
 
-	cout << "Итого получилось" << dollars_3.GetValueS();
+	cout << "Итого получилось: " << dollars_3.GetValueS();
 }
