@@ -79,12 +79,12 @@ public:
 
 int main()
 {
-	const Time time(2, 0, 50);
+	Time time(2, 0, 50);
 	
 
 	cout << "time = ";
-	time.display();
+	time++.display();
 	cout << "\ntime = ";
-	++time.display();
+	time.display();
 	cout << endl;
 }
