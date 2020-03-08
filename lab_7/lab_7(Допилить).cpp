@@ -110,9 +110,51 @@ public:
 };
 
 
+bool IsStopFraction(Fraction stopFraction, Fraction f)
+{
+    return stopFraction == f;
+}
+
 int main()
 {
     setlocale(LC_ALL, "Russian");
-    Fraction userFraction_1, userFraction_2;
+    Fraction userFraction_1, userFraction_2, resultFraction;
     const Fraction stopFraction(0, 1);
+
+    int numerator, denominator;
+    char ch, userOperation;
+
+    while (true)
+    {
+        cout << "Введите дробь 1: ";
+        cin >> numerator >> ch >> denominator;
+        userFraction_1.SetFration(numerator, denominator);
+        if (IsStopFraction(stopFraction, userFraction_1)) break;
+
+        cout << "Введите дробь 2: ";
+        cin >> numerator >> ch >> denominator;
+        userFraction_2.SetFration(numerator, denominator);
+        if (IsStopFraction(stopFraction, userFraction_2)) break;
+
+        cout << "Введите действие: ";
+        cin >> userOperation;
+
+        switch (userOperation) 
+        {
+        case '+':
+            resultFraction = userFraction_1 + userFraction_2;
+            break;
+        case '-':
+            resultFraction = userFraction_1 - userFraction_2;
+            break;
+        case '*':
+            resultFraction = userFraction_1 * userFraction_2;
+            break;
+        case '/':
+            resultFraction = userFraction_1 / userFraction_2;
+            break;
+        }
+
+        cout << resultFraction.GetNumerator() << "/" << resultFraction.GetDenominator() << "\n\n";
+    }
 }
