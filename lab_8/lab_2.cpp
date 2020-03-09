@@ -94,7 +94,6 @@ public:
 			new_s[String::STRING_SIZE - 2] = '\0';
 			strncpy(new_s, String::str, strlen(new_s));
 			strncpy(String::str, new_s, strlen(new_s));
-			int k = 6;
 		}
 	}
 };
