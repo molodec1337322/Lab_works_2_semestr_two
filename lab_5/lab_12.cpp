@@ -54,6 +54,7 @@ public:
     {
         this->numerator = numerator;
         this->denominator = denominator;
+        Lowterms();
     }
 
     int GetNumerator() const
