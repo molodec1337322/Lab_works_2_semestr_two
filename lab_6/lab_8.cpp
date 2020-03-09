@@ -15,7 +15,7 @@ public:
 
 	void PutEl(int pos, int el)
 	{
-		if (pos > LIMIT_MIN || pos < LIMIT_MAX)
+		if (pos > LIMIT_MIN && pos < LIMIT_MAX)
 		{
 			arr[pos] = el;
 		}
@@ -23,7 +23,7 @@ public:
 
 	int GetEl(int pos)
 	{
-		if (pos > LIMIT_MIN || pos < LIMIT_MAX)
+		if (pos > LIMIT_MIN && pos < LIMIT_MAX)
 		{
 			return arr[pos];
 		}
