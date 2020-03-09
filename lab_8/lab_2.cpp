@@ -32,7 +32,7 @@ public:
 		}
 	}
 
-	String operator += (String s2)
+	String operator += (String s2) const
 	{
 		String temp;
 
@@ -51,7 +51,7 @@ public:
 		return temp;
 	}
 
-	String operator + (String s2) 
+	String operator + (String s2) const
 	{
 		String temp;
 
@@ -67,13 +67,6 @@ public:
 			cout << "\nString overflow"; exit(1);
 		}
 
-		return temp;
-	}
-
-	String operator=(String s2)
-	{
-		String temp;
-		strncpy(temp.str, str, strlen(str));
 		return temp;
 	}
 };
@@ -88,13 +81,10 @@ public:
 
 	Pstring(char s[]): String(s)
 	{
-		if(strlen(s) <= String::STRING_SIZE - 1)
-		{
-			char new_s[String::STRING_SIZE - 1];
-			new_s[String::STRING_SIZE - 2] = '\0';
-			strncpy(new_s, String::str, strlen(new_s));
-			strncpy(String::str, new_s, strlen(new_s));
-		}
+		char new_s[String::STRING_SIZE - 1];
+		new_s[String::STRING_SIZE - 2] = '\0';
+		strncpy(new_s, String::str, strlen(new_s));
+		strncpy(String::str, new_s, strlen(new_s));
 	}
 };
 
@@ -107,9 +97,9 @@ int main()
 	Pstring s1(str_1);
 	Pstring s2(str_2);
 
-	Pstring s3;
+	String s3;
 
-	s3 += s1 + s2;
+	s3 = s1 += s2;
 	s3.Display();
 
 	cout << endl;
