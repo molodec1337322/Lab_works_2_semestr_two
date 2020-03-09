@@ -4,9 +4,7 @@
 #include <string>
 #include <iomanip>
 
-
 using namespace std;
-
 
 class Money
 {
@@ -78,13 +76,9 @@ public:
 	Money operator + (Money m)
 	{
 		double newMoney = money + m.money;
-		size_t max;
-		if (numbersStr.length() > m.numbersStr.length()) max = numbersStr.length();
-		else max = m.numbersStr.length();
-
 		string newMoneyStr = to_string(newMoney);
 
-		return Money(newMoneyStr.substr(0, max + 1));
+		return Money(newMoneyStr.substr(0, newMoneyStr.find(",") + 3));
 	}
 };
 
