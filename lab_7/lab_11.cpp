@@ -40,7 +40,7 @@ public:
 		ConvertFromDecimalToOldPounds();
 	}
 
-	Sterling(long pounds, int shillings, int penny): pounds(pounds), shillings(shillings), decimalPounds(0.0)
+	Sterling(long pounds, int shillings, int penny): pounds(pounds), shillings(shillings), penny(penny), decimalPounds(0.0)
 	{
 		ConvertFromOldToDecimalPounds();
 	}
