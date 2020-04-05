@@ -1,23 +1,22 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-#include <cstring> //for strcpy(), etc
-#include <cctype> //for toupper()
+#include <cstring> 
+#include <cctype> 
 #include "ctype.h"
 
 using namespace std;
 
-class String //user-defined string type
+class String 
 {
 private:
-	char* str; //pointer to string
-
+	char* str; 
 public:
 
-	String(char* s) //constructor, one arg
+	String(char* s)
 	{
-		int length = strlen(s); //length of string argument
-		str = new char[length + 1]; //get memory
-		strcpy(str, s); //copy argument to it
+		int length = strlen(s); 
+		str = new char[length + 1]; 
+		strcpy(str, s); 
 	}
 
 	~String() //destructor
@@ -25,22 +24,22 @@ public:
 		delete str;
 	}
 
-	void display() //display the String
+	void display() 
 	{
 		cout << str;
 	}
 
-	void upit(); //uppercase the String
+	void upit(); 
 };
 
 
-void String::upit() //uppercase each character
+void String::upit() 
 {
-	char* ptrch = str; //pointer to this string
-	while (*ptrch) //until null,
+	char* ptrch = str; 
+	while (*ptrch) 
 	{
-		*ptrch = toupper(*ptrch); //uppercase each character
-		ptrch++; //move to next character
+		*ptrch = toupper(*ptrch); 
+		ptrch++; 
 	}
 }
 
@@ -50,12 +49,12 @@ int main()
 	char str[12] = {'H', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', '!'};
 	String s1(str);
 
-	cout << "\ns1="; //display string
+	cout << "\ns1="; 
 	s1.display();
 
-	s1.upit(); //uppercase string
+	s1.upit(); 
 
-	cout << "\ns1="; //display string
+	cout << "\ns1="; 
 	s1.display();
 
 	cout << endl;
