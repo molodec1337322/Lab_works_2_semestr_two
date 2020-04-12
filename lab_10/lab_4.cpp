@@ -26,7 +26,7 @@ public:
 		return *(ptr + j);
 	}
 
-	Array operator=(Array& arr)
+	Array& operator=(const Array& arr)
 	{
 		delete[] ptr;
 		ptr = new int[arr.size];
