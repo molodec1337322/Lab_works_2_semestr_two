@@ -18,7 +18,6 @@ body{
 	margin-left: 5%;
 }
 
-.table1{
-	position: relative;
-	width: max-width;
+#table1{
+	background: linear-gradient(180deg, #0000FF, #FF0000); 
 }
