@@ -1,0 +1,24 @@
+body{
+	background-color: #FFE900;
+}
+
+#text{
+	position: relative;
+	margin-left: 25%;
+	margin-right: 25%
+}
+
+.header1{
+	position: relative;
+	font-weight: bold;
+	color: red;
+}
+
+.subheader1{
+	margin-left: 5%;
+}
+
+.table1{
+	position: relative;
+	width: max-width;
+}
