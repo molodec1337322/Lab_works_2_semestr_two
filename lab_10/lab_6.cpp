@@ -130,7 +130,7 @@ Money operator/(long double number, Money m)
 	return Money(newMoneyStr.substr(0, newMoneyStr.find(",") + 3));
 }
 
-int main() // $124
+int main() 
 {
 	Money money("123.123.50$");
 	long double num = 123123.50;
