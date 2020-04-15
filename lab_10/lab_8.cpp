@@ -21,12 +21,12 @@ public:
 	Operator(char op): op(op)
 	{}
 
-	float GetNumber()
+	float GetNumber() override
 	{
 		return NULL;
 	}
 
-	char GetOperator()
+	char GetOperator() override
 	{
 		return op;
 	}
@@ -42,12 +42,12 @@ public:
 	Number(float num) : num(num)
 	{}
 
-	float GetNumber()
+	float GetNumber() override
 	{
 		return num;
 	}
 
-	char GetOperator()
+	char GetOperator() override
 	{
 		return NULL;
 	}
@@ -55,16 +55,16 @@ public:
 
 int main() 
 {
-	stack<Token> s;
-	s.push(Number(7));
-	s.push(Operator('-'));
-	s.push(Number(6));
+	stack<Token*> s;
+	s.push(new Number(7));
+	s.push(new Operator('-'));
+	s.push(new Number(6));
 
 	
-	cout << s.top().GetNumber() << s.top().GetOperator();
+	cout << s.top()->GetNumber() << s.top()->GetOperator();
 	s.pop();
-	cout << s.top().GetNumber() << s.top().GetOperator();
+	cout << s.top()->GetNumber() << s.top()->GetOperator();
 	s.pop();
-	cout << s.top().GetNumber() << s.top().GetOperator();
+	cout << s.top()->GetNumber() << s.top()->GetOperator();
 	s.pop();
 }
