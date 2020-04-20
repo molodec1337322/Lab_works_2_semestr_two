@@ -89,12 +89,10 @@ public:
 		return Money(newMoneyStr.substr(0, newMoneyStr.find(",") + 3));
 	}
 
-	Money operator/(Money m)
+	double operator/(Money m)
 	{
 		double newMoney = money / m.money;
-		string newMoneyStr = to_string(newMoney);
-
-		return Money(newMoneyStr.substr(0, newMoneyStr.find(",") + 3));
+		return newMoney;
 	}
 
 	Money operator*(long double d)
