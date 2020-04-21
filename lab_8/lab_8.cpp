@@ -153,7 +153,7 @@ public:
 		{
 			new_s[i] = str[i + startWith];
 		}
-		new_s[i] = "\0";
+		new_s[i] = '\0';
 		return Pstring2(new_s);
 	}
 
