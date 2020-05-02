@@ -44,10 +44,10 @@ int main()
 {
 	setlocale(LC_ALL, "Rus");
 
-	Sterling firstSterling, secondSterling, result;
+	Sterling user = {0, 0, 0};
 
-	firstSterling = enter(firstSterling);
-	secondSterling = enter(secondSterling);
+	Sterling firstSterling = enter(user);
+	Sterling secondSterling = enter(user);
 
 	print(sum(firstSterling, secondSterling));
 }
